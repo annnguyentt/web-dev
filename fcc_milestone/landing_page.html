@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+        body {
+            background-color: #eee;
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            color: black;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #header {
+            position: sticky;
+            top: 0px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 20px;
+            margin: 15px 0px;
+            background-color: #eee;
+        }
+
+        #logo {
+            display: flex;
+            align-items: center;
+            width: 60vw;
+            margin: 0;
+            padding: 0;
+        }
+
+        #header-img {
+            max-width: 300px;
+            height: 100%;
+            margin: 0;
+        }
+
+        #header ul {
+            width: 35vw;
+            margin: 0 0 15px 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 100%;
+            list-style-type: none;
+        }
+
+        .nav-link {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+            margin: 0px 10px;
+        }
+
+        .nav-link:hover {
+            color: darkgrey;
+        }
+
+        #container {
+            max-width: 1000px;
+            margin: 5px auto;
+        }
+
+        #introduction {
+            height: 180px;
+        }
+
+        #introduction h2 {
+            text-align: center;
+        }
+
+        #form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #form #email {
+            width: 240px;
+            height: 30px;
+            border-radius: 2px;
+            border: 1px solid grey;
+            margin-bottom: 15px;
+            padding: 5px 10px;
+        }
+
+        #submit {
+            width: 150px;
+            height: 30px;
+            background-color: #F1C40F;
+            border: none;
+            border-radius: 2px;
+            font-weight: bold;
+            font-size: inherit;
+        }
+
+        #submit:hover {
+            background-color: rgb(255, 228, 96);
+        }
+
+        .scroll-margin {
+            scroll-margin-top: 90px
+        }
+
+        #features {
+            margin-top: 10px;
+        }
+
+        .grid {
+            display: flex;
+            margin: 0px 5px;
+        }
+
+        .icon {
+            color: darkorange;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            width: 20vw;
+            height: 110px;
+            margin: 10px 15px;
+        }
+
+        .desc {
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            justify-content: center;
+            width: 80vw;
+        }
+
+        .desc h2 {
+            margin-bottom: 0;
+        }
+
+        .desc p {
+            margin-top: 5px;
+        }
+
+        #howitworks {
+            display: flex;
+            justify-content: center;
+            margin: 50px 0px;
+        }
+
+        #video {
+            max-width: 500px;
+            width: 100%;
+            height: 315px;
+        }
+
+        #pricing {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1000px;
+            margin: 5px auto;
+        }
+
+        .plan {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            width: calc(100%/3);
+            border: solid;
+            margin: 10px;
+            padding: 0;
+        }
+
+        .plan:hover {
+            box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .plan .plan-name {
+            font-weight: bold;
+            font-size: 18px;
+            background-color: #ddd;
+            width: 100%;
+            margin: 0;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .plan .plan-price {
+            font-weight: bold;
+            font-size: 25px;
+            width: 100%;
+            text-align: center;
+            margin: 10px auto;
+        }
+
+        .plan li {
+            width: 100%;
+            text-align: center;
+            margin: 5px auto;
+            list-style-type: none;
+        }
+
+        .plan .button-container {
+            background-color: #F1C40F;
+            max-width: 110px;
+            text-align: center;
+            text-transform: uppercase;
+            padding: 10px 10px;
+            margin: 30px auto 15px auto;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button-container:hover {
+            background-color: rgb(255, 228, 96);
+        }
+
+        .plan .button {
+            text-decoration: none;
+            color: black;
+        }
+
+        #footer {
+            background-color: #ddd;
+            margin: 30px 0px 0px 0px;
+            padding: 20px;
+        }
+
+        #footer ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            list-style-type: none;
+            margin: 10px 0;
+        }
+
+        #footer p {
+            display: flex;
+            justify-content: flex-end;
+            margin: 5px 0 0 0;
+            font-size: 14.4px;
+            padding: 0 20px;
+        }
+
+        .footer-item {
+            color: black;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 0 20px;
+        }
+
+        @media screen and (max-width: 750px) {
+            #header {
+                position: sticky;
+                top: 0px;
+                min-height: 50px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                padding: 0 20px;
+                margin: 15px 0;
+                background-color: #eee;
+            }
+
+            #logo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+            }
+
+            #header ul {
+                width: 60vw;
+                margin: 0 0 15px 0;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                height: 100%;
+                list-style-type: none;
+            }
+
+            .nav-link {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                color: black;
+                text-decoration: none;
+                margin: 5px 10px;
+            }
+
+            #pricing {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .plan {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                width: 300px;
+                border: solid;
+                margin: 10px;
+                padding: 0;
+            }
+
+            .icon {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div id="logo">
+            <a href="#home">
+                <img id="header-img"
+                    src="https://cdn.freecodecamp.org/testable-projects-fcc/images/product-landing-page-logo.png"
+                    alt="Brand logo">
+            </a>
+        </div>
+        <nav id="nav-bar">
+            <ul>
+                <li><a class="nav-link" href="#features">Features</a></li>
+                <li><a class="nav-link" href="#howitworks">How It Works</a></li>
+                <li><a class="nav-link" href="#pricing">Pricing</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <section id="introduction">
+            <h2>Handcrafted, home-made masterpieces</h2>
+            <form id="form" action="https://www.freecodecamp.com/email-submit">
+                <label for="email"></label>
+                <input id="email" name="email" type="email" placeholder="Enter your email address here" required>
+                <button id="submit" type="Submit">GET STARTED</button>
+            </form>
+        </section>
+
+        <section id="features" class="scroll-margin">
+            <div class="grid">
+                <div class="icon">
+                    <i class="fa-solid fa-fire-flame-curved"></i>
+                </div>
+                <div class="desc">
+                    <h2>Premium Materials</h2>
+                    <p>Our trombones use the shiniest brass which is sourced locally. This will increase the longevity
+                        of your purchase.</p>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <div class="desc">
+                    <h2>Fast Shipping</h2>
+                    <p>We make sure you recieve your trombone as soon as we have finished making it. We also provide
+                        free returns if you are not satisfied.</p>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="icon">
+                    <i class="fa-solid fa-battery-full"></i>
+                </div>
+                <div class="desc">
+                    <h2>Quality Assurance</h2>
+                    <p>For every purchase you make, we will ensure there are no damages or faults and we will check and
+                        test the pitch of your instrument.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="howitworks" class="scroll-margin">
+            <iframe id="video" src="https://www.youtube.com/embed/y8Yv4pnO7qc" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </section>
+
+        <section id="pricing" class="scroll-margin">
+            <ul class="plan">
+                <li class=plan-name>TENOR TROMBONE</li>
+                <li class="plan-price">$600</li>
+                <li>Lorem ipsum.</li>
+                <li>Lorem ipsum.</li>
+                <li>Lorem ipsum dolor.</li>
+                <li>Lorem ipsum.</li>
+                <li class="button-container"><a class="button" href="#home" target="_blank">Select</a></li>
+            </ul>
+            <ul class="plan">
+                <li class=plan-name>BASS TROMBONE</li>
+                <li class="plan-price">$900</li>
+                <li>Lorem ipsum.</li>
+                <li>Lorem ipsum.</li>
+                <li>Lorem ipsum dolor.</li>
+                <li>Lorem ipsum.</li>
+                <li class="button-container"><a class="button" href="#home" target="_blank">Select</a></li>
+            </ul>
+            <ul class="plan">
+                <li class=plan-name>VALVE TROMBONE</li>
+                <li class="plan-price">$1200</li>
+                <li>Plays similar to a Trumpet</li>
+                <li>Great for Jazz Bands</li>
+                <li>Lorem ipsum dolor.</li>
+                <li>Lorem ipsum.</li>
+                <li class="button-container"><a class="button" href="#home" target="_blank">Select</a></li>
+                </u>
+        </section>
+
+        <footer id="footer">
+            <ul>
+                <li><a class="footer-item" href="#home">Privacy</a></li>
+                <li><a class="footer-item" href="#home">Terms</a></li>
+                <li><a class="footer-item" href="#home">Contact</a></li>
+            </ul>
+            <p>Copyright 2016, Original Trombones</p>
+
+        </footer>
+    </div>
+
+</body>
